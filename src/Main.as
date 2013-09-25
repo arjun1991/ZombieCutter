@@ -7,16 +7,21 @@
  */
 package {
 
+import game.world.TestWorld;
+
 import net.flashpunk.Engine;
+import net.flashpunk.FP;
 
 public class Main extends Engine {
 
     public function Main() {
+        trace("Main called");
         super(800,600,60,false);
+        FP.world = new TestWorld();
     }
 
     override public function init():void {
-        trace("Inside init, flashpunk initialized.")
+        trace("Inside init, flashpunk initialized.");
     }
 }
 
