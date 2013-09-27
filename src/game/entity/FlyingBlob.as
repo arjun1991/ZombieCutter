@@ -9,16 +9,24 @@ package game.entity
 {
 
 import net.flashpunk.Entity;
+import net.flashpunk.graphics.Image;
+import net.flashpunk.utils.Input;
+import net.flashpunk.utils.Key;
 
 public class FlyingBlob extends Entity{
 
-    public function FlyingBlob() {
+    [Embed(source = '/../assets/tumblr_static_junsword.png' )] private const SWORD:Class;
 
+    public function FlyingBlob() {
+        graphic = new Image(SWORD);
     }
 
     override public function update():void {
-        trace("Flying blob update");
+        if(Input.check(Key.SPACE)) {
+            y -= 5;
+        } else if
     }
+
 }
 
 
